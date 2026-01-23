@@ -29,6 +29,4 @@ function displayMeal(meal) {
         <a class="btn btn-success text-white" target="_blank" href="${meal.strSource}">Source</a>
         <a class="btn youtube text-white" target="_blank" href="${meal.strYoutube}">Youtub</a>
     </div>`;
-
-  body.innerHTML = html;
 }
