@@ -32,6 +32,7 @@ function display() {
     } else collect += createMeal(meal);
   }
   results.innerHTML = collect;
+  MankeFavorite();
 }
 
 function searchByLetter() {
@@ -45,15 +46,41 @@ function searchByLetter() {
   }
 
   results.innerHTML = collect;
+  MankeFavorite();
+}
+
+function MankeFavorite() {
+  for (let meal of meals) {
+    let FavoriteMeals = document.getElementById('fav-' + meal.idMeal);
+
+    if (FavoriteMeals) {
+      FavoriteMeals.onclick = function (e) {
+        e.preventDefault(); 
+        e.stopPropagation(); 
+
+        const key = 'fav' + meal.idMeal;
+        if (localStorage.getItem(key)) {
+          localStorage.removeItem(key);
+          FavoriteMeals.classList.remove('active');
+        } else {
+          localStorage.setItem(key, meal.idMeal);
+          FavoriteMeals.classList.add('active');
+        }
+      };
+    }
+  }
 }
 
 function createMeal(meal, highlight) {
   var regex = new RegExp(searchByNameInput.value, "i");
+  const isFav = localStorage.getItem('fav' + meal.idMeal);
+  const activeClass = isFav ? 'active' : '';
+
   return `<div class="col">
   <div class="meal-card">
     <div class="meal-img-box">
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-      <span class="fav-icon">
+      <span class="fav-icon ${activeClass}" id="fav-${meal.idMeal}">
       <i class="fa-solid fa-heart"></i>
       </span>
     </div>
