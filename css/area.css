@@ -1,0 +1,26 @@
+.area-img-box {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+}
+
+.area-img-box:hover {
+    background-color: darkgray;
+
+}
+
+.area-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.area-info {
+    margin-top: 10px;
+    text-align: center;
+}
