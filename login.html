@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LogIn</title>
     <link rel="stylesheet" href="css/login.css" />
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
   </head>
   <body>
     <section class="hero">
       <div class="overlay" aria-hidden="true"></div>
       <div class="login-card" role="main" aria-labelledby="loginTitle">
-        <form action="./home.html">
+        <form action="./home.html" id="loginForm">
           <h1>Welcome Back!</h1>
           <h2 id="loginTitle">SIGN IN</h2>
           <input
@@ -31,7 +31,6 @@
           />
           <button type="button" onclick="login()">Contuniue</button>
           <p id="error" class="alert alert-danger d-none"></p>
-
           <p><a href="#">Forget Password ?</a></p>
           <p><a href="./registration.html">or New Account !</a></p>
         </form>

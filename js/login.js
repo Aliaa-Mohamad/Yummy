@@ -1,3 +1,5 @@
+"use strict";
+
 let isLoggingIn = false;
 
 async function login() {
@@ -8,14 +10,14 @@ async function login() {
   const passwordInput = document.getElementById("password");
   const errorMsg = document.getElementById("error");
 
-  const username = usernameInput.value.trim();
+  const usernameOrEmail = usernameInput.value.trim();
   const password = passwordInput.value.trim();
 
   errorMsg.textContent = "";
   errorMsg.style.color = "red";
 
   /* ========= Validation ========= */
-  if (!username || !password) {
+  if (!usernameOrEmail || !password) {
     errorMsg.textContent = "Please fill in all fields";
     isLoggingIn = false;
     errorMsg.classList.remove("d-none");
@@ -26,25 +28,25 @@ async function login() {
     errorMsg.textContent = "Password must be at least 4 characters";
     isLoggingIn = false;
     errorMsg.classList.remove("d-none");
-
     return;
   }
 
   try {
-    const response = await fetch("js/users.json");
+    // جلب المستخدمين من JSON Server
+    const response = await fetch("http://localhost:3001/users");
 
-    if (!response.ok) {
-      throw new Error("Failed to load users");
-    }
+    if (!response.ok) throw new Error("Failed to load users");
 
     const users = await response.json();
 
+    // البحث عن المستخدم سواء بالـ username أو email
     const user = users.find(
-      (u) => u.username === username && u.password === password
+      (u) =>
+        (u.username === usernameOrEmail || u.email === usernameOrEmail) &&
+        u.password === password
     );
 
     if (user) {
-      /* ========= Save login state ========= */
       localStorage.setItem(
         "loggedUser",
         JSON.stringify({
@@ -61,9 +63,14 @@ async function login() {
   } catch (error) {
     errorMsg.textContent = "Something went wrong, try again later";
     errorMsg.classList.remove("d-none");
-
     console.error(error);
   } finally {
     isLoggingIn = false;
   }
 }
+
+
+document.getElementById("loginForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  login();
+});
