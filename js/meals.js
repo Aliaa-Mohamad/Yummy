@@ -17,21 +17,29 @@ function displayMeals(meals) {
   meals.forEach((meal) => {
     str += `
      <a href="meal.html?id=${meal.idMeal}">
-        <div class="col">
-          <div class="ingredient-card rounded-3">
-            <div class="ingredient-img-box">
-             <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-            </div>
-            <div class="ingredient-info">
-              <h5>${meal.strMeal}</h5>
-            </div>
-          </div>
-        </div>
-      </a>
+  <div class="col" >
+  <div class="meal-card rounded-3" >
+    <div class="meal-img-box">
+      <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+    </div>
+    <div class="meal-info">
+     <div>
+      <h5>${meal.strMeal}</h5>
+      <p>${meal.strArea} • ${meal.strCategory}</p>
+     </div>
+       <div>
+       <span class="fav-icon">
+      <i class="fa-solid fa-heart"></i>
+      </span>
+       </div>
+    </div>
+  </div>
+</div>
+  </a>
     `;
   });
 
   mealsResult.innerHTML = str;
 }
 
-if (ingName) getMeals(ingName);
+getMeals(ingName);

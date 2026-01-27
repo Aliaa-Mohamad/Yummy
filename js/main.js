@@ -1,6 +1,8 @@
 //aliaa : search by name and first letter and home page
 
-let results = document.getElementById("results");
+// import createMeal from "../utils.js";
+
+const mealsResult = document.getElementById("mealsResult");
 let searchByNameInput = document.getElementById("searchByNameInput");
 
 var meals = [];
@@ -14,8 +16,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
     searchByNameInput.addEventListener("input", () => {
       display();
     });
-  })
-  .catch((error) => console.error("Threre is a mistake", error));
+  });
 
 function display() {
   let inp = searchByNameInput.value.toLowerCase();
@@ -27,10 +28,10 @@ function display() {
       }
     } else collect += createMeal(meal);
   }
-  results.innerHTML = collect;
+  mealsResult.innerHTML = collect;
 }
 
-function createMeal(meal, highlight) {
+export function createMeal(meal, highlight) {
   var regex = new RegExp(searchByNameInput.value, "i");
   return `<a href="pages/meal.html?id=${meal.idMeal}">
   <div class="col" >
