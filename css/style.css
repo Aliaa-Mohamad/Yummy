@@ -1,9 +1,9 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
 
-}
+} */
 
 /* body {
     background-color: #000000f2;
@@ -14,13 +14,13 @@ li {
     list-style: none !important;
 }
 
-a {
+/* a {
     text-decoration: none !important;
 }
 
 i {
     cursor: pointer;
-}
+} */
 
 
 
@@ -32,6 +32,8 @@ i {
 
 
 /*Search Styles*/
+<<<<<<< HEAD
+=======
 
 #searchByNameInput,
 #searchByLetterInput {
@@ -171,3 +173,4 @@ i {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     font-weight: bold;
 }
+>>>>>>> 7caec10d9a2940a597ce971a4d8ec4a772e22f4b
