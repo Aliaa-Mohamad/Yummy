@@ -35,7 +35,7 @@ form.addEventListener("submit", async function (e) {
   try {
     // التحقق من البريد مسبقًا
     const checkResponse = await fetch(
-      `http://localhost:3001/users?email=${email}`
+      `http://localhost:3001/users?email=${email}`,
     );
     const existingUsers = await checkResponse.json();
 
@@ -45,7 +45,7 @@ form.addEventListener("submit", async function (e) {
       return;
     }
 
-    const response = await fetch("http://localhost:3001/users", {
+    const response = await fetch("../data/users.json", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
@@ -60,7 +60,7 @@ form.addEventListener("submit", async function (e) {
       JSON.stringify({
         username: newUser.username,
         loginAt: new Date().toISOString(),
-      })
+      }),
     );
     console.log("Redirecting to index...");
     window.location.href = "index.html";

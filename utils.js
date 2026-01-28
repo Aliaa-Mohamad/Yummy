@@ -49,7 +49,6 @@ export function displayMealDetails(mealObj) {
 
 export function displayMeals(meals) {
   let str = "";
-
   meals.forEach((meal) => {
     str += `
      <a href="meal.html?id=${meal.idMeal}">

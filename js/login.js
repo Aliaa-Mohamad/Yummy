@@ -1,14 +1,13 @@
 "use strict";
 
 let isLoggingIn = false;
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const errorMsg = document.getElementById("error");
 
 async function login() {
   if (isLoggingIn) return;
   isLoggingIn = true;
-
-  const usernameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
-  const errorMsg = document.getElementById("error");
 
   const usernameOrEmail = usernameInput.value.trim();
   const password = passwordInput.value.trim();
@@ -33,17 +32,19 @@ async function login() {
 
   try {
     // جلب المستخدمين من JSON Server
-    const response = await fetch("http://localhost:3001/users");
+    const response = await fetch("../data/users.json");
 
     if (!response.ok) throw new Error("Failed to load users");
 
-    const users = await response.json();
+    const data = await response.json();
+
+    const users = data.users;
 
     // البحث عن المستخدم سواء بالـ username أو email
     const user = users.find(
       (u) =>
         (u.username === usernameOrEmail || u.email === usernameOrEmail) &&
-        u.password === password
+        u.password === password,
     );
 
     if (user) {
@@ -52,10 +53,10 @@ async function login() {
         JSON.stringify({
           username: user.username,
           loginAt: new Date().toISOString(),
-        })
+        }),
       );
 
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     } else {
       errorMsg.textContent = "Username or password is incorrect";
       errorMsg.classList.remove("d-none");
@@ -68,7 +69,6 @@ async function login() {
     isLoggingIn = false;
   }
 }
-
 
 document.getElementById("loginForm").addEventListener("submit", (e) => {
   e.preventDefault();
