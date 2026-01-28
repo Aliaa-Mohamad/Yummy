@@ -44,13 +44,14 @@
 .meal-card {
   background-color: #1a1a1a; /* متناسق مع dark-gray */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
   transition: var(--transition);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
 }
 
 .meal-card:hover {
@@ -86,7 +87,7 @@
 ===================== */
 .fav-icon {
   position: absolute;
-  bottom: 14px;
+  top: 14px;
   right: 14px;
   font-size: 1.35rem;
   color: var(--light-gray);
@@ -111,13 +112,13 @@
 .meal-info {
   padding: 18px 16px 22px;
   text-align: center;
+  position: relative;
 }
 
 .meal-info h5 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
-  color: #fff;
-  font-weight: 500;
+  color: var(--yellow);
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .meal-info p {
@@ -138,4 +139,5 @@
 ===================== */
 a {
   color: inherit;
+  width: 100%;
 }

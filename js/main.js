@@ -77,7 +77,7 @@ export function createMeal(meal) {
     const isFav = localStorage.getItem("fav" + meal.idMeal);
     activeClass = isFav ? "active" : "";
   }
-  return `<a href="pages/meal.html?id=${meal.idMeal}">
+  return `<a href="meal.html?id=${meal.idMeal}">
   <div class="col" >
   <div class="meal-card" >
     <div class="meal-img-box">
@@ -87,18 +87,7 @@ export function createMeal(meal) {
 
     <div class="meal-info">
      <div>
-<<<<<<< HEAD
-      <h5>${
-        highlight
-          ? meal.strMeal.replace(
-              regex,
-              (match) => `<span class="yellow text-white">${match}</span>`
-            )
-          : meal.strMeal
-      }</h5>
-=======
       <h5>${meal.strMeal}</h5>
->>>>>>> 7caec10d9a2940a597ce971a4d8ec4a772e22f4b
       <p>${meal.strArea} • ${meal.strCategory}</p>
      </div>
        <div>

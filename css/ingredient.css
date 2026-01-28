@@ -2,33 +2,33 @@
    Ingredient Cards
 ===================== */
 .ingredient-card {
-    background-color: #1a1a1a; /* متناسق مع dark-gray */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: var(--transition);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  
-  .ingredient-card:hover {
-    transform: translateY(-5px);
-    /* box-shadow: 0 12px 30px rgba(249, 192, 4, 0.3); */
-  }
-  
-  /* =====================
-     Ingredient Image
-  ===================== */
-  .ingredient-img-box {
+  /* box-shadow: 8 8px 25px var(--yellow); */
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 12px 30px var(--yellow); */
+}
+
+/* =====================
+Ingredient Image
+===================== */
+.ingredient-img-box {
+    background-color: var(--dark-gray); 
     width: 100%;
     height: 200px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #111;
+    /* background-color: var(--dark-gray); */
   }
   
   .ingredient-img-box img {
@@ -49,6 +49,10 @@
     padding: 15px;
     color: #ccc;
     text-align: center;
+    background-color: #1a1a1a; 
+
+    /* background-color: #111; */
+
   }
   
   .ingredient-info h5 {
