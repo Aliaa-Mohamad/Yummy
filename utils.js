@@ -49,7 +49,7 @@ export function displayMeals(meals) {
   let str = "";
   meals.forEach((meal) => {
     str += `
-     <a href="meal.html?id=${meal.idMeal}">
+    
   <div class="col" >
   <div class="meal-card rounded-3" >
     <div class="meal-img-box">
@@ -57,7 +57,9 @@ export function displayMeals(meals) {
     </div>
     <div class="meal-info">
      <div>
+      <a href="meal.html?id=${meal.idMeal}">
       <h5>${meal.strMeal}</h5>
+       </a>
      </div>
        <div>
        <span class="fav-icon">
@@ -67,7 +69,7 @@ export function displayMeals(meals) {
     </div>
   </div>
 </div>
-  </a>
+ 
     `;
   });
 
