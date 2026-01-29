@@ -1,11 +1,20 @@
 "use strict";
 
-let isLoggingIn = false;
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
 const errorMsg = document.getElementById("error");
+let isLoggingIn = false;
 
 async function login() {
+  // Check if someone is already logged in
+  const loggedUser = localStorage.getItem("loggedUser");
+  if (loggedUser) {
+    const user = JSON.parse(loggedUser);
+    errorMsg.textContent = `User "${user.username}" is already logged in!`;
+    errorMsg.classList.remove("d-none");
+    return;
+  }
+
   if (isLoggingIn) return;
   isLoggingIn = true;
 
@@ -13,30 +22,28 @@ async function login() {
   const password = passwordInput.value.trim();
 
   errorMsg.textContent = "";
-  errorMsg.style.color = "red";
+  errorMsg.classList.add("d-none");
 
   /* ========= Validation ========= */
   if (!usernameOrEmail || !password) {
     errorMsg.textContent = "Please fill in all fields";
-    isLoggingIn = false;
     errorMsg.classList.remove("d-none");
+    isLoggingIn = false;
     return;
   }
 
   if (password.length < 4) {
     errorMsg.textContent = "Password must be at least 4 characters";
-    isLoggingIn = false;
     errorMsg.classList.remove("d-none");
+    isLoggingIn = false;
     return;
   }
 
   try {
     const response = await fetch("../data/users.json");
-
     if (!response.ok) throw new Error("Failed to load users");
 
     const data = await response.json();
-
     const users = data.users;
 
     const user = users.find(

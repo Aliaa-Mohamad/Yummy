@@ -5,6 +5,7 @@
   --dark-gray: #121212;
   --light-gray: #a19a9a;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --white: #f4eded;
 }
 
 body {

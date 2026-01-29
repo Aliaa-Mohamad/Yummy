@@ -39,7 +39,7 @@ form.addEventListener("submit", async function (e) {
       return;
     }
 
-    const response = await fetch("/data/users.json", {
+    const response = await fetch("http://localhost:3000/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
