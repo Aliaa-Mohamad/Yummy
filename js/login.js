@@ -15,7 +15,6 @@ async function login() {
   errorMsg.textContent = "";
   errorMsg.style.color = "red";
 
-  /* ========= Validation ========= */
   if (!usernameOrEmail || !password) {
     errorMsg.textContent = "Please fill in all fields";
     isLoggingIn = false;
@@ -46,7 +45,7 @@ async function login() {
     );
 
     if (user) {
-      localStorage.setItem(
+      sessionStorage.setItem(
         "loggedUser",
         JSON.stringify({
           username: user.username,

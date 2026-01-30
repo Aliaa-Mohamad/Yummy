@@ -67,7 +67,7 @@ export function showLoginAlert() {
 
 export function displayMeals(meals) {
   let str = "";
-  const isUserLoggedIn = localStorage.getItem("loggedUser");
+  const isUserLoggedIn = sessionStorage.getItem("loggedUser");
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   meals.forEach((meal) => {
@@ -83,7 +83,7 @@ export function displayMeals(meals) {
                 <div class="card-info">
                     <div>
                         <a href="javascript:void(0)" onclick="handleMealClick(event, '${meal.idMeal}')">
-                            <h5>${meal.strMeal}</h5>
+                            <h6>${meal.strMeal}</h6>
                         </a>
                     </div>
                     <div>
@@ -105,7 +105,7 @@ export function displayMeals(meals) {
 window.handleFavoriteClick = function (event, mealId) {
   event.preventDefault();
   event.stopPropagation();
-  const isUserLoggedIn = localStorage.getItem("loggedUser");
+  const isUserLoggedIn = sessionStorage.getItem("loggedUser");
   if (!isUserLoggedIn) {
     showLoginAlert();
     return;
@@ -124,7 +124,7 @@ window.handleFavoriteClick = function (event, mealId) {
 
 window.handleMealClick = function (event, mealId) {
   event.preventDefault();
-  const isUserLoggedIn = localStorage.getItem("loggedUser");
+  const isUserLoggedIn = sessionStorage.getItem("loggedUser");
   if (isUserLoggedIn) {
     window.location.href = `meal.html?id=${mealId}`;
   } else {
@@ -143,7 +143,7 @@ function displayData(meals, flags) {
         meal.strIngredient ? "i" : meal.strArea ? "a" : "c"
       }&recipe=${meal.strIngredient || meal.strArea || meal.strCategory}">
         <div class="col">
-          <div class="card-box rounded-3">
+          <div class="card-box rounded-3 card-box-area">
             <div class="card-img">
               <img 
                 src="${
@@ -156,7 +156,7 @@ function displayData(meals, flags) {
               >
             </div>
             <div class="card-info">
-              <h5>${meal.strIngredient || meal.strArea || meal.strCategory}</h5>
+              <h6>${meal.strIngredient || meal.strArea || meal.strCategory}</h6>
               <p>${
                 meal.strDescription
                   ? meal.strDescription.slice(0, 100)

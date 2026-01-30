@@ -51,7 +51,7 @@ form.addEventListener("submit", async function (e) {
 
     // alert("Registration Successful!");
     form.reset();
-    localStorage.setItem(
+    sessionStorage.setItem(
       "loggedUser",
       JSON.stringify({
         username: newUser.username,

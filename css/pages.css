@@ -1,10 +1,9 @@
-/* =====================
-   Base Card
-===================== */
+/* card */
 .card-box {
-  background-color: #1a1a1a; /* متناسق مع dark-gray */
+  background-color: #1a1a1a;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
   /* border-radius: 20px; */
+  min-height: 330px;
   overflow: hidden;
   transition: var(--transition);
   cursor: pointer;
@@ -12,15 +11,18 @@
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
+  animation: fadeUp 0.6s ease;
 }
 
 .card-box:hover {
   transform: translateY(-5px);
 }
 
-/* =====================
-     Card Image
-  ===================== */
+.card-box-area {
+  min-height: 250px;
+}
+
+/* img */
 .card-img {
   width: 100%;
   height: 200px;
@@ -42,19 +44,20 @@
   transform: scale(1.12);
 }
 
-/* =====================
-     Card Info
-  ===================== */
+/* card info */
 .card-info {
   padding: 18px 16px 22px;
-  text-align: center;
+  text-align: start;
   position: relative;
 }
 
-.card-info h5 {
+.card-info h6 {
   color: var(--yellow);
   font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 10px;
+  width: 90%;
+  /* background-color: red; */
 }
 
 .card-info p {
@@ -62,30 +65,26 @@
   color: var(--light-gray);
 }
 
-/* =====================
-     Favorite Icon
-  ===================== */
+.fav-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 1.35rem;
+  color: var(--light-gray);
+  transition: var(--transition);
+  z-index: 1000;
+}
 
-  .fav-icon {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    font-size: 1.35rem;
-    color: var(--light-gray);
-    transition: var(--transition);
-    z-index: 1000;
-  }
-  
-  /* hover effect (very soft) */
-  .fav-icon:hover {
-    transform: scale(1.15);
-    color: var(--red);
-  }
-  
-  /* active (liked) */
-  .fav-icon.active {
-    color: var(--red);
-  }
+/* hover effect (very soft) */
+.fav-icon:hover {
+  transform: scale(1.15);
+  color: var(--red);
+}
+
+/* active (liked) */
+.fav-icon.active {
+  color: var(--red);
+}
 
 #cardsSection {
   padding-top: 80px;
@@ -118,7 +117,6 @@
 .card-box.meal .card-img {
   height: 220px;
 }
-
 
 /* all */
 /* #searchByNameInput {
