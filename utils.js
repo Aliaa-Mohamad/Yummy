@@ -83,7 +83,7 @@ export function displayMeals(meals) {
                 <div class="card-info">
                     <div>
                         <a href="javascript:void(0)" onclick="handleMealClick(event, '${meal.idMeal}')">
-                            <h6>${meal.strMeal}</h6>
+                            <h6 class="meal-title">${meal.strMeal}</h6>
                         </a>
                     </div>
                     <div>
