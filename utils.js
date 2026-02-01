@@ -146,7 +146,6 @@ window.handleFavoriteClick = async function (mealId) {
     console.log("DB Update Error:", err);
   }
 };
-
 window.handleMealClick = function (event, mealId) {
   event.preventDefault();
   const isUserLoggedIn = sessionStorage.getItem("loggedUser");
@@ -157,7 +156,6 @@ window.handleMealClick = function (event, mealId) {
   }
 };
 
-//--------------------------------------------------------------------------
 const dataResult = document.getElementById("dataResult");
 
 function displayData(meals, flags) {

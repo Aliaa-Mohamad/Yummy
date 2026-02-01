@@ -39,8 +39,17 @@
       "phone": "01000000002",
       "password": "12345678",
       "favorites": [
-        "53254"
+        "53254",
+        "53220"
       ]
+    },
+    {
+      "id": "5d2e",
+      "username": "Ali",
+      "email": "ali@gmail.com",
+      "phone": "01212171762",
+      "password": "123456789",
+      "favorites": []
     }
   ]
 }
