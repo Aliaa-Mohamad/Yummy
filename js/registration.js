@@ -27,7 +27,14 @@ form.addEventListener("submit", async function (e) {
     return;
   }
 
-  const newUser = { username, email, phone, password };
+  const newUser = {
+    id: crypto.randomUUID().slice(0, 4),
+    username,
+    email,
+    phone,
+    password,
+    favorites: [],
+  };
 
   try {
     const checkResponse = await fetch(
@@ -54,6 +61,7 @@ form.addEventListener("submit", async function (e) {
       "loggedUser",
       JSON.stringify({
         username: newUser.username,
+        fav: newUser.favorites,
         loginAt: new Date().toISOString(),
       }),
     );

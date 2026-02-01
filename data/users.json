@@ -1,273 +1,52 @@
 {
   "users": [
     {
-      "username": "Esraa",
-      "password": "12345678",
-      "id": "caf4"
-    },
-    {
-      "username": "Aliaa",
-      "password": "12345678",
-      "id": "ee13"
-    },
-    {
-      "username": "Manar Ahmed",
-      "password": "12345678",
-      "id": "c0ce"
-    },
-    {
-      "username": "Manar",
-      "password": "12345678",
-      "id": "90b1"
-    },
-    {
-      "username": "Nada",
-      "password": "12345678",
-      "id": "74ed"
-    },
-    {
-      "username": "Zeinab",
-      "password": "12345678",
-      "id": "89eb"
-    },
-    {
-      "username": "Bassant",
-      "password": "12345678",
-      "id": "55b1"
-    },
-    {
+      "id": "80a9",
       "username": "Hedra",
+      "email": "emadhedra4@gmail.com",
+      "phone": "01212171762",
       "password": "12345678",
-      "id": "80a9"
-    },
-    {
-      "username": "Mohamed",
-      "password": "dina2024",
-      "id": "d886"
-    },
-    {
-      "id": "8dae",
-      "username": "Aliaa",
-      "email": "abdo2003@gmail.com",
-      "phone": "01090687314",
-      "password": "12345678"
-    },
-    {
-      "id": "0271",
-      "username": "zainab",
-      "email": "roba2003@gmail.com",
-      "phone": "01090687314",
-      "password": "12345678"
-    },
-    {
-      "id": "785a",
-      "username": "sssssssss",
-      "email": "lolo2003@gmail.com",
-      "phone": "11111111111",
-      "password": "111111111111111111"
-    },
-    {
-      "id": "4f16",
-      "username": "zainab",
-      "email": "AAAA2003@gmail.com",
-      "phone": "01090687314",
-      "password": "12345678"
-    },
-    {
-      "id": "dc29",
-      "username": "zainab",
-      "email": "sssss@gmail.com",
-      "phone": "sssssssss22",
-      "password": "12345678"
-    },
-    {
-      "id": "5fa6",
-      "username": "robaa",
-      "email": "bbbb2003@gmail.com",
-      "phone": "11111111111",
-      "password": "12345678"
-    },
-    {
-      "id": "1833",
-      "username": "nada",
-      "email": "af@dsg",
-      "phone": "11111111111",
-      "password": "12345678"
-    },
-    {
-      "id": "513b",
-      "username": "bbbbbb",
-      "email": "bbbbbb@ggggggg.com",
-      "phone": "11111111111",
-      "password": "12345678"
-    },
-    {
-      "id": "e079",
-      "username": "aaaaaaaa",
-      "email": "agkfk@hghfkfg.com",
-      "phone": "11111111111",
-      "password": "12345678"
-    },
-    {
-      "id": "67ea",
-      "username": "zainabى",
-      "email": "aaaaaaa@gggggg.com1",
-      "phone": "11111111111",
-      "password": "12345678"
-    },
-    {
-      "id": "431d",
-      "username": "aaaaaaaaa",
-      "email": "aaaaaaaaaaa@gma.com",
-      "phone": "22222222222",
-      "password": "12345678"
-    },
-    {
-      "id": "bdb9",
-      "username": "piner",
-      "email": "danomowyn@mailinator.com",
-      "phone": "+1 (551) 953-4062",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "8f64",
-      "username": "fumofyfuz",
-      "email": "cyvupupin@mailinator.com",
-      "phone": "+1 (295) 918-9299",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "48e2",
-      "username": "gohal",
-      "email": "muci@mailinator.com",
-      "phone": "+1 (587) 307-2998",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "f79a",
-      "username": "gasoz",
-      "email": "maryb@mailinator.com",
-      "phone": "+1 (697) 597-9235",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "65d6",
-      "username": "xejefetaq",
-      "email": "gibywymosa@mailinator.com",
-      "phone": "+1 (234) 566-2512",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "23a0",
-      "username": "kinafiwa",
-      "email": "jovolih@mailinator.com",
-      "phone": "+1 (875) 835-6475",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "a81c",
-      "username": "rasaripo",
-      "email": "dulejisa@mailinator.com",
-      "phone": "+1 (622) 392-1712",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "9b88",
-      "username": "wuwyra",
-      "email": "teco@mailinator.com",
-      "phone": "+1 (231) 769-9366",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "0758",
-      "username": "zurix",
-      "email": "wigyby@mailinator.com",
-      "phone": "+1 (971) 457-2992",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "a9b8",
-      "username": "zuvabyse",
-      "email": "zaja@mailinator.com",
-      "phone": "+1 (525) 912-8242",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "92f9",
-      "username": "mezora",
-      "email": "qufybitys@mailinator.com",
-      "phone": "+1 (615) 572-1345",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "8b6e",
-      "username": "vikihepi",
-      "email": "sagomem@mailinator.com",
-      "phone": "+1 (831) 284-5078",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "4d9a",
-      "username": "judeduhe",
-      "email": "zexos@mailinator.com",
-      "phone": "+1 (868) 692-3743",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "d4c2",
-      "username": "bapej",
-      "email": "jajibed@mailinator.com",
-      "phone": "+1 (619) 414-9422",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "4405",
-      "username": "vuhizyf",
-      "email": "hanasaza@mailinator.com",
-      "phone": "+1 (622) 326-8388",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "621f",
-      "username": "dyhowequre",
-      "email": "kyhypajer@mailinator.com",
-      "phone": "+1 (394) 292-8504",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "1c19",
-      "username": "dodo",
-      "email": "vodysam@mailinator.com",
-      "phone": "+1 (895) 948-9424",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "0d7b",
-      "username": "vogemeteb",
-      "email": "syxadajuq@mailinator.com",
-      "phone": "+1 (344) 578-1683",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "3e58",
-      "username": "fatupavu",
-      "email": "cevifozo@mailinator.com",
-      "phone": "+1 (369) 307-7707",
-      "password": "Pa$$w0rd!"
-    },
-    {
-      "id": "a61c",
-      "username": "bukerude",
-      "email": "hulyj@mailinator.com",
-      "phone": "+1 (732) 831-9604",
-      "password": "Pa$$w0rd!"
+      "favorites": []
     },
     {
       "id": "ba4d",
       "username": "hedra",
       "email": "emadhedra4@gmail.com",
       "phone": "01212171762",
-      "password": "12345678"
+      "password": "12345678",
+      "favorites": []
+    },
+    {
+      "id": "caf4",
+      "username": "Esraa",
+      "email": "esraa@test.com",
+      "phone": "01000000000",
+      "password": "12345678",
+      "favorites": []
+    },
+    {
+      "id": "ee13",
+      "username": "Aliaa",
+      "email": "aliaa@test.com",
+      "phone": "01000000001",
+      "password": "12345678",
+      "favorites": []
+    },
+    {
+      "id": "74ed",
+      "username": "Nada",
+      "email": "nada@test.com",
+      "phone": "01000000002",
+      "password": "12345678",
+      "favorites": []
+    },
+    {
+      "id": "5d2e",
+      "username": "Ali",
+      "email": "ali@gmail.com",
+      "phone": "01212171762",
+      "password": "123456789",
+      "favorites": []
     }
   ]
 }
