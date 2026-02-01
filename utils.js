@@ -101,31 +101,33 @@ export function displayMeals(meals) {
   mealsResult.innerHTML = str;
 }
 
-window.handleFavoriteClick = async function (mealId) {
+window.handleFavoriteClick = async function (event, mealId) {
   const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
   if (!loggedUser) {
     showLoginAlert();
     return;
   }
   let favorites = loggedUser.favorites || [];
-
+  
   if (favorites.includes(mealId)) {
-    favorites = favorites.filter(id => id !== mealId); 
+    favorites = favorites.filter(id => id !== mealId);
   } else {
     favorites.push(mealId);
-  }loggedUser.favorites = favorites;
+  }
+  loggedUser.favorites = favorites;
   sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser));
   const favBtn = document.getElementById("fav-" + mealId);
-  if (favBtn) favBtn.classList.toggle("active");
-try {
+  if (favBtn) favBtn.classList.toggle("active"); 
+  try {
     await fetch(`http://localhost:5501/users/${loggedUser.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ favorites: favorites }),
     });
-  } catch (error) {console.error("Error updating favorites", error);}
+  } catch (error) {
+    console.error("Error updating favorites", error);
+  }
 };
-
 window.handleMealClick = function (event, mealId) {
   event.preventDefault();
   const isUserLoggedIn = sessionStorage.getItem("loggedUser");
@@ -136,7 +138,7 @@ window.handleMealClick = function (event, mealId) {
   }
 };
 
-//--------------------------------------------------------------------------
+
 const dataResult = document.getElementById("dataResult");
 
 function displayData(meals, flags) {
