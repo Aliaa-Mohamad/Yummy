@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yummy</title>
     <link rel="icon" href="/img/logo.png" />
+    <title>Profile</title>
+    <link href="/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/all.min.css" />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> -->
-    <link rel="stylesheet" href="/css/nav.css" />
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/meal.css" />
-    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
     <nav class="navbar fixed-top bg-black" id="topNav">
       <div class="container d-flex align-items-center justify-content-between">
@@ -140,34 +142,15 @@
       </div>
     </div>
 
-    <div class="container my-1 py-5 mt-5 position-relative" id="mealSection">
-      <!-- <h2 class="text-warning mb-4">Instrunctions</h2> -->
-      <div id="mealDetails" class="row"></div>
-    </div>
+    <div class="container my-5 pt-5">
+      <h2 id="listTitle"></h2>
+      <div id="listMeals" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-4 gy-2"></div>
+    </main>
 
-    <div id="listModal" class="list-modal">
-      <div class="list-modal-content">
-        <div class="list-modal-header">
-          <h3>Your Lists</h3>
-          <span class="close-modal">&times;</span>
-        </div>
-
-        <div class="list-modal-body" id="listsContainer">
-          <!-- lists will be injected here -->
-        </div>
-
-        <div class="list-modal-footer">
-          <button class="create-list-btn">+ Create List</button>
-        </div>
-      </div>
-    </div>
-
-    <!--script-->
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/utils.js"></script>
     <script type="module" src="/js/nav.js"></script>
-
-    <script type="module" src="/js/meal.js"></script>
-    <script src="/js/modal.js"></script>
+    <script type="module" src="/js/list.js"></script>
+    <!-- <script type="module" src="/js/favorites.js"></script> -->
   </body>
 </html>

@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/img/logo.png" />
-    <title>Yummy</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <title>Profile</title>
+    <link href="/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="/css/pages.css" />
     <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
     <link rel="stylesheet" href="/css/modal.css" />
-    <!-- <link rel="icon" href="/img/logo.png" /> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
     <nav class="navbar fixed-top bg-black" id="topNav">
-      <div
-        class="container-fluid d-flex align-items-center justify-content-between"
-      >
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- Logo -->
         <a
-          class="navbar-brand align-items-center gap-1 d-none d-lg-flex"
+          class="navbar-brand d-flex align-items-center gap-1"
           href="/index.html"
         >
           <img src="/img/logo.png" alt="Logo" style="width: 45px" />
           <span class="brand-logo">Yummy</span>
         </a>
+
         <!-- ===== DESKTOP MENU ===== -->
         <ul class="navbar-nav flex-row gap-4 d-none d-lg-flex">
           <li class="nav-item">
@@ -56,27 +53,12 @@
 
         <!-- ===== DESKTOP RIGHT SIDE ===== -->
         <div class="d-none d-lg-flex align-items-center gap-3">
-          <!-- Search -->
-          <div class="search-wrapper m-0">
-            <i class="fas fa-search search-icon"></i>
-            <input
-              type="text"
-              id="searchInputDesk"
-              placeholder="Search..."
-              style="width: 110px"
-            />
-          </div>
-
           <!-- User profile -->
           <div class="userProfile d-none d-lg-flex align-items-center gap-3">
             <a href="/pages/favorites.html" class="favourite">
               <i class="fa-solid fa-heart"></i
             ></a>
-            <span
-              class="userNameDisplay text-warning fw-bold"
-              id="desktopUserNameLink"
-            ></span>
-
+            <span class="userNameDisplay text-warning fw-bold"></span>
             <button class="logoutBtn btn btn-sm btn-outline-danger">
               Logout
             </button>
@@ -84,69 +66,37 @@
 
           <!-- Auth buttons -->
           <div class="authButtons d-flex gap-2">
-            <button class="btn-login btn btn-sm btn-outline-success">
-              Login
-            </button>
-            <button
-              class="btn-login registerBtn btn btn-sm btn-outline-primary"
-            >
-              Register
-            </button>
+            <button class="btn-login">Login</button>
+            <button class="btn-login registerBtn">Register</button>
           </div>
         </div>
 
-        <!-- ===== MOBILE HEADER ===== -->
-        <div
-          class="d-flex d-lg-none w-100 justify-content-between align-items-center"
+        <!-- ===== MOBILE TOGGLER ===== -->
+        <button
+          class="navbar-toggler d-lg-none border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNav"
         >
-          <!-- Logo -->
-          <a
-            class="navbar-brand d-flex align-items-center gap-1"
-            href="/index.html"
-          >
-            <img src="/img/logo.png" alt="Logo" style="width: 45px" />
-            <span class="brand-logo">Yummy</span>
-          </a>
-
-          <!-- Search -->
-          <div class="search-wrapper m-0">
-            <i class="fas fa-search search-icon"></i>
-            <input
-              type="text"
-              id="searchInputMob"
-              placeholder="Search..."
-              style="width: 110px"
-            />
-          </div>
-
-          <!-- Hamburger -->
-          <button
-            class="navbar-toggler border-0"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileNav"
-          >
-            <i class="fa-solid fa-bars text-warning fs-2"></i>
-          </button>
-        </div>
+          <i class="fa-solid fa-bars text-warning fs-2"></i>
+        </button>
       </div>
     </nav>
 
-    <!-- ===== MOBILE / TABLET OFFCANVAS ===== -->
+    <!-- ===== MOBILE / TABLET SIDE NAV ===== -->
     <div
       class="offcanvas offcanvas-start bg-black text-white d-lg-none"
       tabindex="-1"
       id="mobileNav"
     >
-      <div class="offcanvas-header justify-content-between">
-        <h5 class="text-warning m-0">Yummy</h5>
+      <div class="offcanvas-header">
+        <h5 class="text-warning">Yummy</h5>
         <button
           type="button"
           class="btn-close btn-close-white"
           data-bs-dismiss="offcanvas"
         ></button>
       </div>
-
       <div class="offcanvas-body d-flex flex-column gap-4">
         <ul class="navbar-nav text-center gap-3">
           <li class="nav-item">
@@ -171,7 +121,7 @@
 
         <hr class="border-secondary" />
 
-        <!-- Mobile Auth / User -->
+        <!-- Mobile Auth -->
         <div class="d-flex flex-column align-items-center gap-3 w-100">
           <div
             class="userProfile d-none d-lg-none flex-column align-items-center gap-2 text-center w-100"
@@ -179,11 +129,7 @@
             <a href="/pages/favorites.html" class="favourite">
               <i class="fa-solid fa-heart"></i
             ></a>
-            <span
-              class="userNameDisplay text-warning fw-bold"
-              id="desktopUserNameLink"
-            ></span>
-
+            <span class="userNameDisplay text-warning fw-bold"></span>
             <button class="logoutBtn btn btn-sm btn-outline-danger w-50">
               Logout
             </button>
@@ -197,56 +143,61 @@
       </div>
     </div>
 
-    <div class="container my-5 pt-5">
-      <h2 class="text-warning mb-4">Our Meals</h2>
+    <main id="profileMain" class="pt-5">
+      <div class="container">
+        <h2 class="page-title pt-5">Your Lists</h2>
+        <div id="userLists" class="lists-grid"></div>
+      </div>
+    </main>
 
-      <div
-        id="mealsResult"
-        class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-4 gy-2"
-      ></div>
-    </div>
-
-    <div id="listModal" class="list-modal hidden">
+    <div id="listSettingsModal" class="list-modal hidden">
       <div class="list-modal-content">
         <div class="list-modal-header">
-          <h3>Your Lists</h3>
-          <span class="close-modal">&times;</span>
+          <h3 id="settingsListName">List Settings</h3>
+          <span class="close-modal" id="closeSettingsModal">&times;</span>
         </div>
 
         <div class="list-modal-body">
-          <!-- NORMAL MODE -->
-          <div id="listsView">
-            <div id="listsContainer"></div>
+          <!-- Rename -->
+          <div class="setting-item">
+            <button class="btn btn-outline-warning w-100" id="renameListBtn">
+              Rename List
+            </button>
+
+            <input
+              type="text"
+              id="renameListInput"
+              class="form-control mt-2 hidden"
+              placeholder="New list name"
+            />
+            <button class="btn btn-success mt-2 hidden" id="saveRenameBtn">
+              Save
+            </button>
           </div>
 
-          <!-- FORM MODE -->
-          <div id="createListView" class="hidden">
-            <button class="close-form-btn">✕</button>
+          <hr />
 
-            <form id="createListForm" class="create-list-form">
-              <input
-                type="text"
-                id="listNameInput"
-                placeholder="List name"
-                required
-              />
+          <!-- Privacy -->
+          <button class="btn btn-outline-info w-100" id="togglePrivacyBtn">
+            Make Private
+          </button>
 
-              <button type="submit">Create</button>
-            </form>
-          </div>
-        </div>
+          <hr />
 
-        <div class="list-modal-footer" id="modalFooter">
-          <button class="create-list-btn">+ Create List</button>
+          <!-- Delete -->
+          <button class="btn btn-outline-danger w-100" id="deleteListBtn">
+            Delete List
+          </button>
         </div>
       </div>
     </div>
 
-    <!--script-->
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/utils.js"></script>
     <script type="module" src="/js/nav.js"></script>
-    <script type="module" src="../js/main.js"></script>
-    <script src="/js/modal.js"></script>
+    <script type="module" src="/js/profile.js"></script>
+    <!-- <script type="module" src="/js/modal.js"></script> -->
+    <!-- <script type="module" src="/js/meals.js"></script> -->
+    <!-- <script type="module" src="/js/meals.js"></script> -->
   </body>
 </html>

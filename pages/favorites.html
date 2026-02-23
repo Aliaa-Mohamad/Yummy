@@ -1,106 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <!-- <link rel="stylesheet" href="../css/all.css"> -->
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/modal.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Favorites</title>
-  <link rel="stylesheet" href="../css/bootstrap.min.css" />
-  <link href="/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/common.css" />
-  <!-- <link rel="stylesheet" href="../css/all.css"> -->
-  <link rel="stylesheet" href="../css/nav.css" />
-  <link rel="stylesheet" href="/css/pages.css" />
-</head>
-
-<body>
-  <nav id="topNav">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="nav-logo">
-        <img src="/img/logo.png" alt="Logo" style="width: 45px; height: auto" />
-        <h3 style="font-size: 20px" class="brand-logo m-0">Yummy</h3>
-      </div>
-
-      <div class="nav-menu-center">
-        <ul class="d-flex list-unstyled m-0">
-          <li>
-            <a href="/index.html" style="text-decoration: none; color: inherit">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/pages/all.html" style="text-decoration: none; color: inherit">
-              All Meals
-            </a>
-          </li>
-          <li>
-            <a href="/pages/categories.html" style="text-decoration: none; color: inherit">
-              Categories
-            </a>
-          </li>
-          <li>
-            <a href="/pages/area.html" style="text-decoration: none; color: inherit">
-              Area
-            </a>
-          </li>
-          <li>
-            <a href="/pages/ingredient.html" style="text-decoration: none; color: inherit">
-              Ingredients
-            </a>
-          </li>
-          <li>
-            <a href="/pages/Contact.html" style="text-decoration: none; color: inherit">
-              Contact Us
-            </a>
-          </li>
+  <body>
+    <nav class="navbar fixed-top bg-black" id="topNav">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-1" href="/index.html">
+          <img src="/img/logo.png" alt="Logo" style="width: 45px" />
+          <span class="brand-logo">Yummy</span>
+        </a>
+    
+        <!-- ===== DESKTOP MENU ===== -->
+        <ul class="navbar-nav flex-row gap-4 d-none d-lg-flex">
+          <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/all.html">All Meals</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/area.html">Area</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/ingredient.html">Ingredients</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/Contact.html">Contact Us</a></li>
         </ul>
-      </div>
-
-      <div class="nav-toggle">
-        <i class="fa-solid fa-bars" id="toggleBtn"></i>
-      </div>
-
-      <div class="nav-right-side d-flex align-items-center" style="gap: 15px;">
-
-
-        <div id="userProfile" style="display: none; align-items: center; gap: 15px;">
-
-
-          <div class="favourite">
-            <a href="/pages/favorites.html" style="color: red; font-size: 22px; text-decoration: none;">❤</a>
+    
+        <!-- ===== DESKTOP RIGHT SIDE ===== -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <!-- User profile -->
+          <div class="userProfile d-none d-lg-flex align-items-center gap-3">
+            <a href="/pages/favorites.html" class="favourite"> <i class="fa-solid fa-heart"></i></a>
+            <span class="userNameDisplay text-warning fw-bold"></span>
+            <button class="logoutBtn btn btn-sm btn-outline-danger">Logout</button>
           </div>
-
-
-          <span id="userNameDisplay" class="text-warning fw-bold" style="font-size: 16px;"></span>
-
-
-          <button id="logoutBtn" class="btn btn-sm btn-outline-danger rounded-pill px-3"
-            style="font-size: 12px;">Logout</button>
+    
+          <!-- Auth buttons -->
+          <div class="authButtons d-flex gap-2">
+            <button class="btn-login">Login</button>
+            <button class="btn-login registerBtn">Register</button>
+          </div>
         </div>
-
-
-
-
+    
+        <!-- ===== MOBILE TOGGLER ===== -->
+        <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+          <i class="fa-solid fa-bars text-warning fs-2"></i>
+        </button>
       </div>
-
+    </nav>
+    
+    <!-- ===== MOBILE / TABLET SIDE NAV ===== -->
+    <div class="offcanvas offcanvas-start bg-black text-white d-lg-none" tabindex="-1" id="mobileNav">
+      <div class="offcanvas-header">
+        <h5 class="text-warning">Yummy</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column gap-4">
+        <ul class="navbar-nav text-center gap-3">
+          <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/all.html">All Meals</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/area.html">Area</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/ingredient.html">Ingredients</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/Contact.html">Contact Us</a></li>
+        </ul>
+    
+        <hr class="border-secondary" />
+    
+        <!-- Mobile Auth -->
+        <div class="d-flex flex-column align-items-center gap-3 w-100">
+          <div class="userProfile d-none d-lg-none flex-column align-items-center gap-2 text-center w-100">
+            <a href="/pages/favorites.html" class="favourite"> <i class="fa-solid fa-heart"></i></a>
+            <span class="userNameDisplay text-warning fw-bold"></span>
+            <button class="logoutBtn btn btn-sm btn-outline-danger w-50">Logout</button>
+          </div>
+    
+          <div class="authButtons d-flex flex-column gap-2 w-100">
+            <button class="btn-login w-100">Login</button>
+            <button class="btn-login registerBtn w-100">Register</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
-  <div class="container my-5 pt-5">
-    <h2 class="text-warning mb-4">My Favorite Meals</h2>
-    <div id="mealsResult" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-4 gy-2"></div>
-  </div>
+    <div class="container my-5 pt-5">
+      <h2 class="text-warning mb-4">My Favorite Meals</h2>
+      <div
+        id="mealsResult"
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-4 gy-2"
+      ></div>
+    </div>
 
-  <script src="../js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="../utils.js"></script>
-  <script type="module" src="/js/nav.js"></script>
-  <script type="module" src="/js/favorites.js"></script>
+    <div id="listModal" class="list-modal">
+      <div class="list-modal-content">
+        <div class="list-modal-header">
+          <h3>Your Lists</h3>
+          <span class="close-modal">&times;</span>
+        </div>
+    
+        <div class="list-modal-body" id="listsContainer">
+          <!-- lists will be injected here -->
+        </div>
+    
+        <div class="list-modal-footer">
+          <button class="create-list-btn">+ Create List</button>
+        </div>
+      </div>
+    </div>
+    
 
-  <script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../utils.js"></script>
+    <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="/js/favorites.js"></script>
+    <script src="/js/modal.js"></script>
 
-    if (!sessionStorage.getItem("loggedUser")) {
-      location.href = "login.html";
-    }
-  </script>
-</body>
-
+    <script>
+      if (!sessionStorage.getItem("loggedUser")) {
+        location.href = "login.html";
+      }
+    </script>
+  </body>
 </html>

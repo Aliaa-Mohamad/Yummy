@@ -30,7 +30,17 @@
       "email": "aliaa@test.com",
       "phone": "01000000001",
       "password": "12345678",
-      "favorites": []
+      "favorites": ["53254"],
+      "lists": [
+        {
+          "id": "62f6e04f-10c5-4c42-a0f4-cd30c871e076",
+          "name": "dinner",
+          "ownerID": "ee13",
+          "public": false,
+          "likes": 0,
+          "items": ["53322"]
+        }
+      ]
     },
     {
       "id": "74ed",
@@ -38,10 +48,7 @@
       "email": "nada@test.com",
       "phone": "01000000002",
       "password": "12345678",
-      "favorites": [
-        "53254",
-        "53220"
-      ]
+      "favorites": ["53254", "53220"]
     },
     {
       "id": "5d2e",
@@ -81,9 +88,34 @@
       "email": "emadhedra5@gmail.com",
       "phone": "01212171762",
       "password": "Hedra555",
-      "favorites": [
-        "53322"
-      ]
+      "favorites": ["53322"]
+    },
+    {
+      "id": "92d4",
+      "username": "mannory",
+      "email": "rapoq@mailinator.com",
+      "phone": "+1 (964) 277-8752",
+      "password": "Mannory123456",
+      "favorites": [],
+      "lists": []
+    },
+    {
+      "id": "9c74",
+      "username": "zainab",
+      "email": "aliaamohamad2006@gmail.com",
+      "phone": "Zainab Zain",
+      "password": "Zainab1234",
+      "favorites": [],
+      "lists": []
+    },
+    {
+      "id": "f0d1",
+      "username": "aliaa aliaa",
+      "email": "aliaaaliaa2592003@gmail.com",
+      "phone": "aliaa aliaa",
+      "password": "Aliaa2003",
+      "favorites": [],
+      "lists": []
     }
   ]
 }

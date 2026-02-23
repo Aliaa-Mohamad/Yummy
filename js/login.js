@@ -41,8 +41,12 @@ async function login() {
     const user = users.find(
       (u) =>
         (u.username === usernameOrEmail || u.email === usernameOrEmail) &&
-        u.password === password,
+        u.password === password
     );
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectUrl = urlParams.get("redirect") || "../index.html";
+    console.log("Redirect after login:", redirectUrl); // للتأكد
+    
 
     if (user) {
       sessionStorage.setItem(
@@ -52,10 +56,12 @@ async function login() {
           username: user.username,
           favorites: user.favorites,
           loginAt: new Date().toISOString(),
-        }),
+        })
       );
-
-      window.location.href = "../index.html";
+    
+      window.location.href = redirectUrl;
+  
+    
     } else {
       errorMsg.textContent = "Username or password is incorrect";
       errorMsg.classList.remove("d-none");

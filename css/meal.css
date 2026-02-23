@@ -22,7 +22,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
   margin-bottom: 15px;
-  margin-top: 3.3rem;
+  /* margin-top: 3.3rem; */
 }
 
 #mealDetails h1 {
@@ -143,4 +143,47 @@ body {
   background-color: #1f1f1f;
   padding: 15px;
   border-radius: 15px;
+}
+
+
+/* =====================
+   Instructions / Steps
+===================== */
+.instruction-text {
+  list-style: decimal inside; /* ترقيم الخطوات */
+  padding: 20px;
+  background-color: #222; /* لون الخلفية */
+  border-radius: 15px;
+  margin-top: 20px;
+  line-height: 1.8;
+  color: #f1f1f1;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.instruction-text li {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.instruction-text li:hover {
+  background-color: var(--yellow);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   Responsive Instructions
+===================== */
+@media (max-width: 768px) {
+  .instruction-text {
+    padding: 15px;
+  }
+
+  .instruction-text li {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
 }

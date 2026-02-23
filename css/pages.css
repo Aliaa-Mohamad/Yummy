@@ -13,6 +13,9 @@
   animation: fadeUp 0.6s ease;
 }
 
+h2 {
+  color: var(--yellow);
+}
 
 .card-box:hover {
   transform: translateY(-5px);
@@ -68,7 +71,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
 
 .fav-icon {
@@ -124,27 +126,6 @@
   height: 220px;
 }
 
-/* all */
-/* #searchByNameInput {
-  background-color: #0b0b0b;
-  border: 1.5px solid #2a2a2a;
-  border-radius: 50px;
-  padding: 14px 20px;
-  font-size: 0.95rem;
-  color: #fff;
-  transition: var(--transition);
-}
-
-#searchByNameInput::placeholder {
-  color: var(--light-gray);
-}
-
-#searchByNameInput:focus {
-  outline: none;
-  border-color: var(--yellow);
-  box-shadow: 0 0 0 3px rgba(249, 192, 4, 0.15);
-} */
-
 .nav-link-custom {
   text-decoration: none;
   color: #fff;
@@ -191,59 +172,91 @@
   cursor: pointer;
 }
 
-/* @media (max-width: 991px) {
-  .search-wrapper input {
-    width: 100px;
-  }
-} */
+/* Overlay يظهر عند hover */
+.card-img {
+  position: relative;
+}
+
+.card-img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.card-img:hover .overlay {
+  opacity: 1;
+}
+
+/* + icon */
+.card-img .plus-icon {
+  font-size: 1rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffc107;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 10px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.card-img .plus-icon:hover {
+  transform: scale(1.2);
+}
 
 @media (max-width: 991px) {
-
-  
   .nav-actions {
     display: flex !important;
     flex-direction: row !important;
-    
+
     align-items: center !important;
     gap: 5px !important;
-    
+
     flex-wrap: nowrap !important;
-    
   }
 
-  
   .search-wrapper {
     max-width: 80px !important;
-    
+
     padding: 2px 8px !important;
     margin: 0 !important;
   }
 
   .search-wrapper input {
     width: 50px !important;
-    
+
     font-size: 10px !important;
   }
 
- 
   #userProfile {
     display: flex !important;
-    
+
     align-items: center !important;
     gap: 5px !important;
   }
 
-  
   .favourite a {
     font-size: 16px !important;
-   
   }
 
   #userNameDisplay {
     font-size: 11px !important;
-    
+
     max-width: 50px;
-    
+
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -251,17 +264,15 @@
 
   #logoutBtn {
     padding: 2px 6px !important;
-    
+
     font-size: 9px !important;
   }
 
- 
   #toggleBtn {
     font-size: 20px !important;
     margin: 0 !important;
   }
 
- 
   .nav-logo img {
     width: 30px !important;
   }
@@ -270,5 +281,3 @@
     font-size: 16px !important;
   }
 }
-
-

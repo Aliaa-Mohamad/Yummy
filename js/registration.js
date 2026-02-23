@@ -42,6 +42,7 @@ form.addEventListener("submit", async function (e) {
     phone,
     password,
     favorites: [],
+    lists: [],
   };
 
   try {
@@ -72,8 +73,11 @@ form.addEventListener("submit", async function (e) {
         loginAt: new Date().toISOString(),
       }),
     );
-    console.log("Redirecting to index...");
-    window.location.href = "/index.html";
+    
+    const redirectUrl = sessionStorage.getItem("redirectAfterLogin") || "/index.html";
+    sessionStorage.removeItem("redirectAfterLogin");
+    window.location.href = redirectUrl;
+    
   } catch (error) {
     errorMsg.textContent = "Something went wrong, try again later";
     errorMsg.classList.remove("d-none");
