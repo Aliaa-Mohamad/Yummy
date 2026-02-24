@@ -3,17 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yummy</title>
     <link rel="icon" href="/img/logo.png" />
+    <title>Profile</title>
+    <link href="/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/all.min.css" />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> -->
-    <link rel="stylesheet" href="/css/nav.css" />
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/meal.css" />
-    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
     <nav class="navbar fixed-top bg-black" id="topNav">
       <div class="container d-flex align-items-center justify-content-between">
@@ -140,34 +143,56 @@
       </div>
     </div>
 
-    <div class="container my-1 py-5 mt-5 position-relative" id="mealSection">
-      <!-- <h2 class="text-warning mb-4">Instrunctions</h2> -->
-      <div id="mealDetails" class="row"></div>
-    </div>
+    <main id="profileMain" class="pt-5">
+      <div class="container">
+        <h2 class="page-title pt-5">Your Lists</h2>
+        <div id="userLists" class="lists-grid"></div>
+      </div>
+    </main>
 
-    <div id="listModal" class="list-modal">
+    <div id="listSettingsModal" class="list-modal hidden">
       <div class="list-modal-content">
         <div class="list-modal-header">
-          <h3>Your Lists</h3>
-          <span class="close-modal">&times;</span>
+          <h3 id="settingsListName">List Settings</h3>
+          <span class="close-modal" id="closeSettingsModal">&times;</span>
         </div>
 
-        <div class="list-modal-body" id="listsContainer">
-          <!-- lists will be injected here -->
-        </div>
+        <div class="list-modal-body">
+          <!-- Rename -->
+          <div class="setting-item">
+            <button class="btn btn-outline-warning w-100" id="renameListBtn">
+              Rename List
+            </button>
 
-        <div class="list-modal-footer">
-          <button class="create-list-btn">+ Create List</button>
+            <input
+              type="text"
+              id="renameListInput"
+              class="form-control mt-2 hidden"
+              placeholder="New list name"
+            />
+            <button class="btn btn-success mt-2 hidden" id="saveRenameBtn">
+              Save
+            </button>
+          </div>
+
+          <!-- <hr /> -->
+
+          <hr />
+
+          <!-- Delete -->
+          <button class="btn btn-outline-danger w-100" id="deleteListBtn">
+            Delete List
+          </button>
         </div>
       </div>
     </div>
 
-    <!--script-->
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/utils.js"></script>
     <script type="module" src="/js/nav.js"></script>
-
-    <script type="module" src="/js/meal.js"></script>
-    <script src="/js/modal.js"></script>
+    <script type="module" src="/js/profile.js"></script>
+    <!-- <script type="module" src="/js/modal.js"></script> -->
+    <!-- <script type="module" src="/js/meals.js"></script> -->
+    <!-- <script type="module" src="/js/meals.js"></script> -->
   </body>
 </html>

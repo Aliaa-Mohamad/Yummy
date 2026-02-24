@@ -30,21 +30,25 @@ async function login() {
   }
 
   try {
-    const response = await fetch("../data/users.json");
+    const response = await fetch("http://localhost:5501/users");
 
     if (!response.ok) throw new Error("Failed to load users");
 
-    const data = await response.json();
-
-    const users = data.users;
+    const users = await response.json();
 
     const user = users.find(
       (u) =>
         (u.username === usernameOrEmail || u.email === usernameOrEmail) &&
-        u.password === password,
+        u.password === password
     );
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectUrl = urlParams.get("redirect") || "../index.html";
+    console.log("Redirect after login:", redirectUrl);
+
     if (user) {
+      console.log("USER FOUND:", user);
+
       sessionStorage.setItem(
         "loggedUser",
         JSON.stringify({
@@ -52,10 +56,12 @@ async function login() {
           username: user.username,
           favorites: user.favorites,
           loginAt: new Date().toISOString(),
-        }),
+        })
       );
+      console.log("STORED:", sessionStorage.getItem("loggedUser"));
 
-      window.location.href = "../index.html";
+
+      window.location.href = redirectUrl;
     } else {
       errorMsg.textContent = "Username or password is incorrect";
       errorMsg.classList.remove("d-none");

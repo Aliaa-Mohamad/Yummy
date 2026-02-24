@@ -3,18 +3,22 @@ import { displayMeals } from "../utils.js";
 async function loadFavorites() {
   const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
 
+  // favourite
+  // favourite.classList.remove('ullogggedFav');
+
   if (!loggedUser || !loggedUser.favorites) {
     displayMeals([]);
     return;
   }
 
   const favorites = loggedUser.favorites;
+
   let favoriteMealsData = [];
 
   for (let mealId of favorites) {
     try {
       const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`,
+        `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
       );
 
       if (!res.ok) continue;

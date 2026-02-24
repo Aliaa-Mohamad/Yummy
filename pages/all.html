@@ -1,83 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/logo.png" />
+    <title>Yummy</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+    <!-- <link rel="icon" href="/img/logo.png" /> -->
+  </head>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/img/logo.png" />
-  <title>Yummy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../css/common.css" />
-  <link rel="stylesheet" href="/css/pages.css" />
-  <link rel="stylesheet" href="/css/nav.css" />
-  <link rel="icon" href="/img/logo.png" />
-</head>
-
-<body>
-  <nav id="topNav">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="nav-logo">
-        <img src="/img/logo.png" alt="Logo" style="width: 45px; height: auto" />
-        <h3 style="font-size: 20px" class="brand-logo m-0">Yummy</h3>
-      </div>
-
-
-      <div class="nav-menu-center">
-        <ul class="d-flex list-unstyled m-0">
-          <li><a href="/index.html" style="text-decoration: none; color: inherit">Home</a></li>
-          <li><a href="/pages/all.html" style="text-decoration: none; color: inherit">All Meals</a></li>
-          <li><a href="/pages/categories.html" style="text-decoration: none; color: inherit">Categories</a></li>
-          <li><a href="/pages/area.html" style="text-decoration: none; color: inherit">Area</a></li>
-          <li><a href="/pages/ingredient.html" style="text-decoration: none; color: inherit">Ingredients</a></li>
-          <li><a href="/pages/Contact.html" style="text-decoration: none; color: inherit">Contact Us</a></li>
+  <body>
+    <nav class="navbar fixed-top bg-black" id="topNav" >
+      <div
+        class="container-fluid d-flex align-items-center justify-content-between"
+      >
+        <a
+          class="navbar-brand align-items-center gap-1 d-none d-lg-flex"
+          href="/index.html"
+        >
+          <img src="/img/logo.png" alt="Logo" style="width: 45px" />
+          <span class="brand-logo">Yummy</span>
+        </a>
+        <!-- ===== DESKTOP MENU ===== -->
+        <ul class="navbar-nav flex-row gap-4 d-none d-lg-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/all.html">All Meals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/categories.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/area.html">Area</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/ingredient.html">Ingredients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/Contact.html">Contact Us</a>
+          </li>
         </ul>
+
+        <!-- ===== DESKTOP RIGHT SIDE ===== -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <!-- Search -->
+          <div class="search-wrapper m-0">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              id="searchInputDesk"
+              placeholder="Search..."
+              style="width: 110px"
+            />
+          </div>
+
+          <!-- User profile -->
+          <div class="userProfile d-none d-lg-flex align-items-center gap-3">
+            <a href="/pages/favorites.html" class="favourite" id="navbarFav">
+              <i class="fa-solid fa-heart"></i
+            ></a>
+            <span
+              class="userNameDisplay text-warning fw-bold"
+              id="desktopUserNameLink"
+            ></span>
+
+            <button class="logoutBtn btn btn-sm btn-outline-danger">
+              Logout
+            </button>
+          </div>
+
+          <!-- Auth buttons -->
+          <div class="authButtons d-flex gap-2">
+            <button class="btn-login btn btn-sm btn-outline-success">
+              Login
+            </button>
+            <button
+              class="btn-login registerBtn btn btn-sm btn-outline-primary"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== MOBILE HEADER ===== -->
+        <div
+          class="d-flex d-lg-none w-100 justify-content-between align-items-center"
+        >
+          <!-- Logo -->
+          <a
+            class="navbar-brand d-flex align-items-center gap-1"
+            href="/index.html"
+          >
+            <img src="/img/logo.png" alt="Logo" style="width: 45px" />
+            <span class="brand-logo">Yummy</span>
+          </a>
+
+          <!-- Search -->
+          <div class="search-wrapper m-0">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              id="searchInputMob"
+              placeholder="Search..."
+              style="width: 110px"
+            />
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileNav"
+          >
+            <i class="fa-solid fa-bars text-warning fs-2"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== MOBILE / TABLET OFFCANVAS ===== -->
+    <div
+      class="offcanvas offcanvas-start bg-black text-white d-lg-none"
+      tabindex="-1"
+      id="mobileNav"
+    >
+      <div class="offcanvas-header justify-content-between">
+        <h5 class="text-warning m-0">Yummy</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+        ></button>
       </div>
 
+      <div class="offcanvas-body d-flex flex-column gap-4">
+        <ul class="navbar-nav text-center gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/all.html">All Meals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/categories.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/area.html">Area</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/ingredient.html">Ingredients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/Contact.html">Contact Us</a>
+          </li>
+        </ul>
 
-      <div class="nav-actions d-flex align-items-center gap-2">
+        <hr class="border-secondary" />
 
+        <!-- Mobile Auth / User -->
+        <div class="d-flex flex-column align-items-center gap-3 w-100">
+          <div
+            class="userProfile d-none d-lg-none flex-column align-items-center gap-2 text-center w-100"
+          >
+            <a href="/pages/favorites.html" class="favourite">
+              <i class="fa-solid fa-heart"></i
+            ></a>
+            <span
+              class="userNameDisplay text-warning fw-bold"
+              id="desktopUserNameLink"
+            ></span>
 
-        <div class="search-wrapper m-0">
-          <i class="fas fa-search search-icon"></i>
-          <input type="text" id="searchByNameInput" placeholder="Search..." oninput="display()" style="width: 110px;" />
-        </div>
-
-
-        <div id="userProfile" style="display: none; align-items: center; gap: 10px;">
-
-          <div class="favourite m-0">
-            <a href="/pages/favorites.html" style="color: red; font-size: 20px; text-decoration: none;">❤</a>
+            <button class="logoutBtn btn btn-sm btn-outline-danger w-50">
+              Logout
+            </button>
           </div>
-          <span id="userNameDisplay" class="text-warning fw-bold" style="font-size: 14px; white-space: nowrap;"></span>
-          <button id="logoutBtn" class="btn btn-sm btn-outline-danger rounded-pill px-2"
-            style="font-size: 10px;">Logout</button>
+
+          <div class="authButtons d-flex flex-column gap-2 w-100">
+            <button class="btn-login w-100">Login</button>
+            <button class="btn-login registerBtn w-100">Register</button>
+          </div>
         </div>
-
-
-        <i class="fa-solid fa-bars menu-toggle ms-2" id="toggleBtn"></i>
       </div>
     </div>
-  </nav>
 
-  <div class="container my-5 pt-5">
-    <h2 class="text-warning mb-4 ">Our Meals</h2>
+    <div class="container my-5 pt-5">
+      <h2 class="text-warning mb-4">Our Meals</h2>
 
-    <div id="mealsResult" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-4 gy-2"></div>
-  </div>
+      <div
+        id="mealsResult"
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-4 gy-2"
+      ></div>
+    </div>
 
-  <!--script-->
-  <script src="../js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="/utils.js"></script>
-  <script type="module" src="/js/nav.js"></script>
-  <script type="module" src="../js/main.js"></script>
+    <div id="listModal" class="list-modal hidden">
+      <div class="list-modal-content">
+        <div class="list-modal-header">
+          <h3>Your Lists</h3>
+          <span class="close-modal">&times;</span>
+        </div>
 
-  <script>
-    if (!sessionStorage.getItem("loggedUser")) {
-      window.location.href = "login.html";
-    }
-  </script>
-</body>
+        <div class="list-modal-body">
+          <!-- NORMAL MODE -->
+          <div id="listsView">
+            <div id="listsContainer"></div>
+          </div>
 
+          <!-- FORM MODE -->
+          <div id="createListView" class="hidden">
+            <button class="close-form-btn">✕</button>
+
+            <form id="createListForm" class="create-list-form">
+              <input
+                type="text"
+                id="listNameInput"
+                placeholder="List name"
+                required
+              />
+
+              <button type="submit">Create</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="list-modal-footer" id="modalFooter">
+          <button class="create-list-btn">+ Create List</button>
+        </div>
+      </div>
+    </div>
+
+    <!--script-->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/utils.js"></script>
+    <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script src="/js/modal.js"></script>
+  </body>
 </html>
