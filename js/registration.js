@@ -69,10 +69,13 @@ form.addEventListener("submit", async function (e) {
     sessionStorage.setItem(
       "loggedUser",
       JSON.stringify({
+        id: newUser.id,
         username: newUser.username,
+        favorites: [],
         loginAt: new Date().toISOString(),
-      }),
+      })
     );
+    
     
     const redirectUrl = sessionStorage.getItem("redirectAfterLogin") || "/index.html";
     sessionStorage.removeItem("redirectAfterLogin");

@@ -9,15 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const createListForm = document.getElementById("createListForm");
   const modalFooter = document.getElementById("modalFooter");
 
-  // const listModal = document.getElementById("listModal");
   if (listModal) {
     listModal.classList.add("hidden");
   }
 
-  // **تأكد كل العناصر موجودة قبل إضافة Event Listeners**
   if (createListBtn) {
     createListBtn.addEventListener("click", () => {
-      listModal.style.display = "flex"; // يظهر المودال
+      listModal.style.display = "flex";
 
       createListView.classList.remove("hidden");
       if (modalFooter) modalFooter.classList.add("hidden");
@@ -56,21 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // عرض الليستات
     renderLists(loggedUser.lists || [], mealId);
 
-    // فتح المودال
     listModal.style.display = "flex";
   };
 
-  // إغلاق عند الضغط على الإكس
   if (closeModalBtn) {
     closeModalBtn.onclick = () => {
       listModal.style.display = "none";
     };
   }
 
-  // إغلاق عند الضغط على الخلفية
   if (listModal) {
     listModal.onclick = (e) => {
       if (e.target === listModal) {
@@ -87,27 +81,22 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!loggedUser) return;
 
       const name = document.getElementById("listNameInput").value.trim();
-      // const privacy = document.getElementById("listPrivacy").value;
 
       if (!name) return;
 
       const newList = {
-        id: crypto.randomUUID(), // معرف فريد لكل list
+        id: crypto.randomUUID(),
         name,
         ownerID: loggedUser.id,
-        // public: privacy === "public",
         likes: 0,
         items: [],
       };
 
-      // إضافة الـ list للمستخدم
       loggedUser.lists = loggedUser.lists || [];
       loggedUser.lists.push(newList);
 
-      // حفظ في sessionStorage
       sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser));
 
-      // تحديث الـ DB (إذا عندك سيرفر)
       try {
         await fetch(`http://localhost:5501/users/${loggedUser.id}`, {
           method: "PATCH",
@@ -118,15 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Create list error:", err);
       }
 
-      // إعادة عرض القوائم في المودال
       renderLists(loggedUser.lists, null);
 
-      // إخفاء الفورم والرجوع للقوائم
       createListView.classList.add("hidden");
       listsView.classList.remove("hidden");
       if (modalFooter) modalFooter.classList.remove("hidden");
 
-      // إعادة تعيين الفورم
       createListForm.reset();
     });
   }
@@ -164,15 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const list = loggedUser.lists.find((l) => l.id === listId);
     if (!list) return;
 
-    // لو الـ meal موجود أصلاً، ما نكررش
     if (!list.items.includes(mealId)) {
       list.items.push(mealId);
     }
 
-    // تحديث sessionStorage
     sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser));
 
-    // تحديث الـ DB
     try {
       await fetch(`http://localhost:5501/users/${loggedUser.id}`, {
         method: "PATCH",
@@ -183,10 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Add meal to list error:", err);
     }
 
-    // Feedback للمستخدم
     alert(`Meal added to ${list.name}`);
 
-    // اختفاء المودال بعد الإضافة
     resetModalState();
     listModal.style.display = "none";
   };

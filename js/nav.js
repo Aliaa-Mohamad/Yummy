@@ -1,5 +1,6 @@
+const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
 function updateGlobalNavbar() {
-  const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+  const navbarFavIcon = document.querySelector("#navbarFav i");
 
   // Desktop
   const desktopUserProfile = document.querySelector(".d-lg-flex.userProfile");
@@ -18,7 +19,6 @@ function updateGlobalNavbar() {
     if (desktopUserName) {
       desktopUserName.textContent = loggedUser.username;
 
-      // اضيف رابط للنقر
       desktopUserName.style.cursor = "pointer";
       desktopUserName.onclick = () => {
         window.location.href = `/pages/profile.html`;
@@ -49,15 +49,13 @@ function updateGlobalNavbar() {
   const logoutBtns = document.querySelectorAll(".logoutBtn");
   logoutBtns.forEach((btn) => {
     btn.onclick = (e) => {
-      e.preventDefault(); // لمنع أي سلوك افتراضي
+      e.preventDefault();
       // console.log(desktopUserProfile)
 
       console.log(desktopUserProfile);
 
-      // مسح session
       sessionStorage.removeItem("loggedUser");
 
-      // تحديث الواجهة قبل إعادة التوجيه
       desktopUserProfile?.classList.remove("d-lg-flex");
       console.log(desktopUserProfile);
       desktopUserProfile?.classList.add("d-none");
@@ -70,12 +68,19 @@ function updateGlobalNavbar() {
 
       setTimeout(() => {
         window.location.href = "/index.html";
-      }, 50); // 50ms تأخير بسيط لضمان التطبيق
+      }, 50);
     };
   });
+
+  if (navbarFavIcon) {
+    if (loggedUser && loggedUser.favorites && loggedUser.favorites.length > 0) {
+      navbarFavIcon.style.color = "red";
+    } else {
+      navbarFavIcon.style.color = "gray";
+    }
+  }
 }
 
-// تشغيل التحديث عند تحميل الصفحة
 document.addEventListener("DOMContentLoaded", updateGlobalNavbar);
 
 // Handle login/register button clicks
@@ -88,4 +93,30 @@ document.addEventListener("click", (e) => {
     const currentUrl = encodeURIComponent(window.location.href);
     window.location.href = `/pages/registration.html?redirect=${currentUrl}`;
   }
+});
+
+const navbarFavIcon = document.querySelector("#navbarFav i");
+
+if (loggedUser && loggedUser.favorites && loggedUser.favorites.length > 0) {
+  navbarFavIcon.style.color = "red";
+} else {
+  navbarFavIcon.style.color = "gray";
+}
+
+function refreshNavbarFavColor() {
+  const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+  const favIcons = document.querySelectorAll(".favourite i"); // كل الفاف في الديسكتوب والموبايل
+
+  favIcons.forEach((icon) => {
+    if (loggedUser && loggedUser.favorites && loggedUser.favorites.length > 0) {
+      icon.style.color = "red";
+    } else {
+      icon.style.color = "gray";
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateGlobalNavbar();
+  refreshNavbarFavColor();
 });

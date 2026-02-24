@@ -54,12 +54,15 @@
 }
 
 .privacy-status.public {
-  background-color: #28a745; /* أخضر */
+  background-color: #28a745;
   color: #fff;
 }
 
 .privacy-status.private {
-  background-color: #dc3545; /* أحمر */
+  background-color: #dc3545; 
   color: #fff;
 }
 
+.noHave {
+  color: var(--light-gray);
+}

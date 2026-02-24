@@ -137,7 +137,6 @@ h2 {
 .nav-link-custom:hover,
 .nav-link-custom.active {
   color: #ffc107;
-  /* اللون الأصفر */
 }
 
 .search-wrapper {
@@ -172,7 +171,6 @@ h2 {
   cursor: pointer;
 }
 
-/* Overlay يظهر عند hover */
 .card-img {
   position: relative;
 }
@@ -190,7 +188,7 @@ h2 {
   justify-content: flex-end;
   align-items: flex-start;
   padding: 10px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 .card-img:hover .overlay {
@@ -215,6 +213,10 @@ h2 {
 
 .card-img .plus-icon:hover {
   transform: scale(1.2);
+}
+
+.delete-icon {
+  color: #fff;
 }
 
 @media (max-width: 991px) {

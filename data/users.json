@@ -30,7 +30,9 @@
       "email": "aliaa@test.com",
       "phone": "01000000001",
       "password": "12345678",
-      "favorites": ["53254"],
+      "favorites": [
+        "53254"
+      ],
       "lists": [
         {
           "id": "62f6e04f-10c5-4c42-a0f4-cd30c871e076",
@@ -38,7 +40,9 @@
           "ownerID": "ee13",
           "public": false,
           "likes": 0,
-          "items": ["53322"]
+          "items": [
+            "53322"
+          ]
         }
       ]
     },
@@ -48,7 +52,10 @@
       "email": "nada@test.com",
       "phone": "01000000002",
       "password": "12345678",
-      "favorites": ["53254", "53220"]
+      "favorites": [
+        "53254",
+        "53220"
+      ]
     },
     {
       "id": "5d2e",
@@ -88,7 +95,9 @@
       "email": "emadhedra5@gmail.com",
       "phone": "01212171762",
       "password": "Hedra555",
-      "favorites": ["53322"]
+      "favorites": [
+        "53322"
+      ]
     },
     {
       "id": "92d4",
@@ -116,6 +125,92 @@
       "password": "Aliaa2003",
       "favorites": [],
       "lists": []
+    },
+    {
+      "id": "a99a",
+      "username": "sawuvik",
+      "email": "tymofilypy@mailinator.com",
+      "phone": "+1 (433) 565-2082",
+      "password": "Pa$$w0rd!",
+      "favorites": [],
+      "lists": []
+    },
+    {
+      "id": "fc5d",
+      "username": "mozunezi",
+      "email": "cugu@mailinator.com",
+      "phone": "+1 (394) 658-1635",
+      "password": "Pa$$w0rd!",
+      "favorites": [],
+      "lists": []
+    },
+    {
+      "id": "c758",
+      "username": "jorisomi",
+      "email": "lipowyxo@mailinator.com",
+      "phone": "+1 (352) 537-7962",
+      "password": "Pa$$w0rd!",
+      "favorites": [],
+      "lists": []
+    },
+    {
+      "id": "d472",
+      "username": "harosetyn",
+      "email": "rimybup@mailinator.com",
+      "phone": "+1 (548) 782-5896",
+      "password": "Pa$$w0rd!",
+      "favorites": [],
+      "lists": []
+    },
+    {
+      "id": "e5f9",
+      "username": "tejuf",
+      "email": "xexatisy@mailinator.com",
+      "phone": "+1 (696) 195-4498",
+      "password": "Pa$$w0rd!",
+      "favorites": [],
+      "lists": []
+    },
+    {
+      "id": "b408",
+      "username": "fyxeqewys",
+      "email": "pare@mailinator.com",
+      "phone": "+1 (448) 588-8087",
+      "password": "Pa$$w0rd!",
+      "favorites": [
+        "53322",
+        "53220"
+      ],
+      "lists": [
+        {
+          "id": "d6b2d3cb-b684-4305-8947-141d7460f084",
+          "name": "breakfast",
+          "ownerID": "b408",
+          "likes": 0,
+          "items": [
+            "53133"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6ada",
+      "username": "cugaku",
+      "email": "silavu@mailinator.com",
+      "phone": "+1 (271) 819-4102",
+      "password": "Pa$$w0rd!",
+      "favorites": [],
+      "lists": [
+        {
+          "id": "33485d60-dc57-4e5b-b65e-10ce3c4e787d",
+          "name": "breakfast",
+          "ownerID": "6ada",
+          "likes": 0,
+          "items": [
+            "53254"
+          ]
+        }
+      ]
     }
   ]
 }

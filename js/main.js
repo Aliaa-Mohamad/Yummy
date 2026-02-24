@@ -5,13 +5,11 @@ let searchInputMob = document.getElementById("searchInputMob");
 
 let meals = [];
 
-// جلب البيانات
 fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
   .then((response) => response.json())
   .then((data) => {
     meals = data.meals || [];
 
-    // أول عرض
     displayMeals(meals);
 
     // Event listeners
@@ -19,12 +17,10 @@ fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
     searchInputMob.addEventListener("input", display);
   });
 
-// دالة العرض بعد التصفية
 function display() {
   const queryDesk = searchInputDesk?.value.toLowerCase() || "";
   const queryMob = searchInputMob?.value.toLowerCase() || "";
 
-  // نستخدم query واحدة فقط (إذا كنتِ تريدين أن أي input يأثر على العرض)
   const query = queryDesk || queryMob;
 
   const filteredMeals = query

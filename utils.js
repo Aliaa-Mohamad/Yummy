@@ -142,6 +142,7 @@ window.handleFavoriteClick = async function (mealId, event) {
   loggedUser.favorites = favorites;
 
   sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+  refreshNavbarFavColor();
 
   const favBtn = document.getElementById("fav-" + mealId);
   if (favBtn) favBtn.classList.toggle("active");
@@ -164,6 +165,7 @@ window.handleFavoriteClick = async function (mealId, event) {
     console.log("DB Update Error:", err);
   }
 };
+
 window.handleMealClick = function (event, mealId) {
   event.preventDefault();
   const isUserLoggedIn = sessionStorage.getItem("loggedUser");

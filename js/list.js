@@ -32,7 +32,9 @@ async function displayMeals(mealIds) {
           <div class="card-img">
             <img src="${mealObj.strMealThumb}" alt="${mealObj.strMeal}">
             <div class="overlay">
-              <span class="delete-icon"><i class="fa-solid fa-trash"></i></span>
+              <span class="delete-icon" onclick="deleteMealFromList('${
+                mealObj.idMeal
+              }')"><i class="fa-solid fa-trash"></i></span>
             </div>
           </div>
           <div class="card-info">
@@ -42,9 +44,14 @@ async function displayMeals(mealIds) {
               </a>
             </div>
             <div>
-              <span class="fav-icon" onclick="toggleFavorite('${mealObj.idMeal}', event)">
-                <i class="fa-solid fa-heart"></i>
-              </span>
+            <span 
+            class="fav-icon ${
+              loggedUser.favorites?.includes(mealObj.idMeal) ? "active" : ""
+            }" 
+            onclick="handleFavoriteClick('${mealObj.idMeal}', event)" 
+            id="fav-${mealObj.idMeal}">
+            <i class="fa-solid fa-heart"></i>
+          </span>          
             </div>
           </div>
         </div>
@@ -57,8 +64,22 @@ async function displayMeals(mealIds) {
 
 displayMeals(list.items);
 
-// toggle favorite function
 window.toggleFavorite = function (mealId, event) {
   event.stopPropagation();
-  // نفس الفنكشن اللي عندك في utils
+};
+
+window.deleteMealFromList = function (mealId) {
+  event?.stopPropagation();
+
+  const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
+  if (!loggedUser) return;
+
+  const list = loggedUser.lists.find((l) => l.id === listId);
+  if (!list) return;
+
+  list.items = list.items.filter((id) => id !== mealId);
+
+  sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+
+  displayMeals(list.items);
 };

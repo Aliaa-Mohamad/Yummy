@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // بدل onclick في renderUserLists
   function renderUserLists(lists, container) {
     if (!lists.length) {
-      container.innerHTML = `<p>You haven't created any lists yet.</p>`;
+      container.innerHTML = `<p class="noHave">You haven't created any lists yet.</p>`;
       return;
     }
 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderUserLists(loggedUser.lists);
     settingsModal.style.display = "none";
   };
-  // افتراضياً، كل close button يتحكم في المودال الأب بتاعه
+
   document.querySelectorAll(".close-modal").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const modal = e.target.closest(".list-modal");
