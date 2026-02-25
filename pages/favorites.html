@@ -96,18 +96,48 @@
       ></div>
     </div>
 
-    <div id="listModal" class="list-modal">
+    <div id="listModal" class="list-modal hidden">
       <div class="list-modal-content">
         <div class="list-modal-header">
           <h3>Your Lists</h3>
           <span class="close-modal">&times;</span>
         </div>
-    
-        <div class="list-modal-body" id="listsContainer">
-          <!-- lists will be injected here -->
+
+        <div class="list-modal-body">
+          <div id="listsView">
+            <div id="listsContainer"></div>
+          </div>
+
+          <div id="createListView" class="hidden">
+            <form id="createListForm" class="create-list-form">
+              <div class="create-list-label-row">
+                <label for="listNameInput">List name</label>
+                <button
+                  type="button"
+                  class="close-form-btn"
+                  aria-label="Close create list form"
+                >
+                  &times;
+                </button>
+              </div>
+
+              <input
+                type="text"
+                id="listNameInput"
+                placeholder="Enter list name"
+                minlength="2"
+                maxlength="30"
+                autocomplete="off"
+                required
+              />
+              <p class="create-list-hint">Use a short, clear name (2-30 characters).</p>
+
+              <button type="submit">Create</button>
+            </form>
+          </div>
         </div>
-    
-        <div class="list-modal-footer">
+
+        <div class="list-modal-footer" id="modalFooter">
           <button class="create-list-btn">+ Create List</button>
         </div>
       </div>
