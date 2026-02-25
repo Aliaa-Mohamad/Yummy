@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     createListBtn.addEventListener("click", () => {
       listModal.style.display = "flex";
 
-      createListView.classList.remove("hidden");
+      if (createListView) createListView.classList.remove("hidden");
+      if (listsView) listsView.classList.add("hidden");
       if (modalFooter) modalFooter.classList.add("hidden");
     });
   }
@@ -58,20 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     listModal.style.display = "flex";
   };
-
-  if (closeModalBtn) {
-    closeModalBtn.onclick = () => {
-      listModal.style.display = "none";
-    };
-  }
-
-  if (listModal) {
-    listModal.onclick = (e) => {
-      if (e.target === listModal) {
-        listModal.style.display = "none";
-      }
-    };
-  }
 
   if (createListForm) {
     createListForm.addEventListener("submit", async (e) => {
@@ -115,6 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       createListForm.reset();
     });
+  }
+
+  if (closeFormBtn) {
+    closeFormBtn.onclick = () => {
+      if (createListView) createListView.classList.add("hidden");
+      if (listsView) listsView.classList.remove("hidden");
+      if (modalFooter) modalFooter.classList.remove("hidden");
+    };
   }
 
   if (closeModalBtn) {
