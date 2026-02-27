@@ -81,55 +81,16 @@ function getRandomMeal() {
   xhr.send();
 }
 
-// const userProfile = document.getElementById("userProfile");
-// const authButtons = document.getElementById("authButtons");
-// const userNameDisplay = document.getElementById("userNameDisplay");
-// const logoutBtn = document.getElementById("logoutBtn");
+const getStartedBtn = document.getElementById("getStartedBtn");
 
-// const loginBtn = document.querySelector(".btn-login");
-// const registerBtn = document.getElementById("registerBtn");
+if (getStartedBtn) {
+  getStartedBtn.onclick = function () {
+    const isLogged = sessionStorage.getItem("loggedUser");
 
-// function updateNavbar() {
-//   const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
-
-//   if (loggedUser) {
-//     authButtons.style.setProperty("display", "none", "important");
-
-//     userProfile.style.setProperty("display", "flex", "important");
-
-//     userNameDisplay.textContent = loggedUser.username;
-//   } else {
-//     authButtons.style.setProperty("display", "flex", "important");
-
-//     userProfile.style.setProperty("display", "none", "important");
-//   }
-// }
-
-// updateNavbar();
-
-// if (logoutBtn) {
-//   logoutBtn.onclick = () => {
-//     sessionStorage.clear();
-//     window.location.reload();
-//   };
-// }
-
-// if (loginBtn)
-//   loginBtn.onclick = () => (window.location.href = "pages/login.html");
-// if (registerBtn)
-//   registerBtn.onclick = () =>
-//     (window.location.href = "pages/registration.html");
-
-// const getStartedBtn = document.getElementById("getStartedBtn");
-
-// if (getStartedBtn) {
-//   getStartedBtn.onclick = function () {
-//     const isLogged = sessionStorage.getItem("loggedUser");
-
-//     if (isLogged) {
-//       window.location.href = "pages/all.html";
-//     } else {
-//       window.location.href = "pages/login.html";
-//     }
-//   };
-// }
+    if (isLogged) {
+      window.location.href = "pages/all.html";
+    } else {
+      window.location.href = "pages/login.html";
+    }
+  };
+}

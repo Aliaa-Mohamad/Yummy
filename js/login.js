@@ -39,7 +39,7 @@ async function login() {
     const user = users.find(
       (u) =>
         (u.username === usernameOrEmail || u.email === usernameOrEmail) &&
-        u.password === password
+        u.password === password,
     );
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -56,10 +56,10 @@ async function login() {
           username: user.username,
           favorites: user.favorites,
           loginAt: new Date().toISOString(),
-        })
+          lists: user.lists,
+        }),
       );
       console.log("STORED:", sessionStorage.getItem("loggedUser"));
-
 
       window.location.href = redirectUrl;
     } else {

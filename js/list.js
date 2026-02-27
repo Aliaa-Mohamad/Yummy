@@ -21,7 +21,7 @@ async function displayMeals(mealIds) {
   let html = "";
   for (const id of mealIds) {
     const res = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
     );
     const meal = await res.json();
     const mealObj = meal.meals[0];
@@ -64,9 +64,9 @@ async function displayMeals(mealIds) {
 
 displayMeals(list.items);
 
-window.toggleFavorite = function (mealId, event) {
-  event.stopPropagation();
-};
+// window.toggleFavorite = function (mealId, event) {
+//   event.stopPropagation();
+// };
 
 window.deleteMealFromList = function (mealId) {
   event?.stopPropagation();

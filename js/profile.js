@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function updateUserLists(user) {
     try {
-      await fetch(`../data/users.json/users/${user.id}`, {
+      await fetch(`http://localhost:5501/users/${user.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ lists: user.lists }),
