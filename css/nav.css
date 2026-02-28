@@ -136,6 +136,7 @@
 /* Favourite Heart */
 .favourite {
   font-size: 20px;
+  color: gray;
   /* border: 1px solid #f00; */
 }
 
@@ -184,22 +185,26 @@
 /* Tablet Adjustments for Desktop Navbar */
 /* ==================== Tablet Adjustments for Desktop Navbar ==================== */
 @media (min-width: 768px) and (max-width: 991px) {
+
   /* Desktop navbar search-wrapper */
   .d-none.d-lg-flex .search-wrapper {
-    max-width: 900px; /* كبر الحجم */
+    max-width: 900px;
+    /* كبر الحجم */
     flex: 1;
   }
 
   .d-none.d-lg-flex .search-wrapper input {
     width: 100%;
-    min-width: 200px; /* خليها أكبر */
+    min-width: 200px;
+    /* خليها أكبر */
     font-size: 14px;
   }
 
   /* Mobile header search-wrapper */
   .d-flex.d-lg-none .search-wrapper {
     flex: 1;
-    max-width: 200px; /* مناسب للموبايل الأصغر */
+    max-width: 200px;
+    /* مناسب للموبايل الأصغر */
   }
 
   .d-flex.d-lg-none .search-wrapper input {

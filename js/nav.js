@@ -99,11 +99,9 @@ const navbarFavIcon = document.querySelector("#navbarFav i");
 
 if (loggedUser && loggedUser.favorites && loggedUser.favorites.length > 0) {
   navbarFavIcon.style.color = "red";
-} else {
-  navbarFavIcon.style.color = "gray";
 }
 
-function refreshNavbarFavColor() {
+export function refreshNavbarFavColor() {
   const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
   const favIcons = document.querySelectorAll(".favourite i"); // كل الفاف في الديسكتوب والموبايل
 

@@ -1,10 +1,10 @@
 "use strict";
-
+import { refreshNavbarFavColor } from "./js/nav.js";
 let mealDetails = document.getElementById("mealDetails");
 
 export default async function getMealDetails(mealID) {
   let meal = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`,
   );
   meal = await meal.json();
   const mealObj = meal.meals[0];
@@ -204,8 +204,8 @@ function displayData(meals, flags) {
                 meal.strDescription
                   ? meal.strDescription.slice(0, 100)
                   : meal.strCategoryDescription
-                  ? meal.strCategoryDescription.slice(0, 100)
-                  : ""
+                    ? meal.strCategoryDescription.slice(0, 100)
+                    : ""
               }</p> 
             </div>
           </div>
@@ -220,19 +220,19 @@ function displayData(meals, flags) {
 export async function getData(data, flags = []) {
   if (data[2] === "ingredient.html") {
     const res = await fetch(
-      "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+      "https://www.themealdb.com/api/json/v1/1/list.php?i=list",
     );
     const resData = await res.json();
     displayData(resData.meals.slice(0, 20));
   } else if (data[2] === "area.html") {
     const res = await fetch(
-      "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
+      "https://www.themealdb.com/api/json/v1/1/list.php?a=list",
     );
     const resData = await res.json();
     displayData(resData.meals, flags);
   } else if (data[2] === "categories.html") {
     const res = await fetch(
-      "https://www.themealdb.com/api/json/v1/1/categories.php"
+      "https://www.themealdb.com/api/json/v1/1/categories.php",
     );
     const resData = await res.json();
     displayData(resData.categories);

@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const deleteListBtn = document.getElementById("deleteListBtn");
   const closeSettingsModal = document.getElementById("closeSettingsModal");
 
-  console.log(closeSettingsModal);
-
   let currentListId = null;
 
   const loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"));
