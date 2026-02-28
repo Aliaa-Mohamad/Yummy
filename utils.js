@@ -15,7 +15,7 @@ export function displayMealDetails(mealObj) {
   let recipes = "";
   // console.log(mealObj.strInstructions);
   const instructionArray = mealObj.strInstructions.split(".");
-  console.log(instructionArray);
+
   for (let i = 1; i <= 20; i++) {
     if (mealObj[`strIngredient${i}`]) {
       recipes += `<li class="my-3 mx-1 p-1  alert-success rounded">${

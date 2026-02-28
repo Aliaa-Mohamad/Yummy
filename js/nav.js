@@ -52,14 +52,12 @@ function updateGlobalNavbar() {
       e.preventDefault();
       // console.log(desktopUserProfile)
 
-      console.log(desktopUserProfile);
-
       sessionStorage.removeItem("loggedUser");
 
       desktopUserProfile?.classList.remove("d-lg-flex");
-      console.log(desktopUserProfile);
+
       desktopUserProfile?.classList.add("d-none");
-      console.log(desktopUserProfile);
+
       desktopAuthButtons?.classList.remove("d-none");
       // desktopUserName.classList.add('d-none')
 

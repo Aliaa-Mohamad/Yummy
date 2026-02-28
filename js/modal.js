@@ -1,3 +1,4 @@
+import { showLoginAlert } from "../utils.js";
 document.addEventListener("DOMContentLoaded", () => {
   const listModal = document.getElementById("listModal");
   const listsContainer = document.getElementById("listsContainer");
