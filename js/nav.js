@@ -97,8 +97,15 @@ document.addEventListener("click", (e) => {
 
 const navbarFavIcon = document.querySelector("#navbarFav i");
 
-if (loggedUser && loggedUser.favorites && loggedUser.favorites.length > 0) {
+if (
+  navbarFavIcon &&
+  loggedUser &&
+  loggedUser.favorites &&
+  loggedUser.favorites.length > 0
+) {
   navbarFavIcon.style.color = "red";
+} else if (navbarFavIcon) {
+  navbarFavIcon.style.color = "gray";
 }
 
 export function refreshNavbarFavColor() {
