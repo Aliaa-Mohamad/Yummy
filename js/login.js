@@ -131,7 +131,7 @@ async function login() {
           favorites: user.favorites || [],
           lists: user.lists || [],
           loginAt: new Date().toISOString(),
-        }),
+        })
       );
       window.location.href = "../index.html";
     } else {
