@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="../css/all.min.css" />
   <link rel="stylesheet" href="../css/bootstrap.min.css" />
   <!-- <link rel="stylesheet" href="../css/area.css" /> -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="/js/supabaseClient.js"></script>
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="/css/pages.css">
@@ -24,7 +26,7 @@
         <img src="/img/logo.png" alt="Logo" style="width: 45px" />
         <span class="brand-logo">Yummy</span>
       </a>
-  
+
       <!-- ===== DESKTOP MENU ===== -->
       <ul class="navbar-nav flex-row gap-4 d-none d-lg-flex">
         <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
@@ -34,7 +36,7 @@
         <li class="nav-item"><a class="nav-link" href="/pages/ingredient.html">Ingredients</a></li>
         <li class="nav-item"><a class="nav-link" href="/pages/Contact.html">Contact Us</a></li>
       </ul>
-  
+
       <!-- ===== DESKTOP RIGHT SIDE ===== -->
       <div class="d-none d-lg-flex align-items-center gap-3">
         <!-- User profile -->
@@ -43,21 +45,22 @@
           <span class="userNameDisplay text-warning fw-bold"></span>
           <button class="logoutBtn btn btn-sm btn-outline-danger">Logout</button>
         </div>
-  
+
         <!-- Auth buttons -->
         <div class="authButtons d-flex gap-2">
           <button class="btn-login">Login</button>
           <button class="btn-login registerBtn">Register</button>
         </div>
       </div>
-  
+
       <!-- ===== MOBILE TOGGLER ===== -->
-      <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+      <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#mobileNav">
         <i class="fa-solid fa-bars text-warning fs-2"></i>
       </button>
     </div>
   </nav>
-  
+
   <!-- ===== MOBILE / TABLET SIDE NAV ===== -->
   <div class="offcanvas offcanvas-start bg-black text-white d-lg-none" tabindex="-1" id="mobileNav">
     <div class="offcanvas-header">
@@ -73,9 +76,9 @@
         <li class="nav-item"><a class="nav-link" href="/pages/ingredient.html">Ingredients</a></li>
         <li class="nav-item"><a class="nav-link" href="/pages/Contact.html">Contact Us</a></li>
       </ul>
-  
+
       <hr class="border-secondary" />
-  
+
       <!-- Mobile Auth -->
       <div class="d-flex flex-column align-items-center gap-3 w-100">
         <div class="userProfile d-none d-lg-none flex-column align-items-center gap-2 text-center w-100">
@@ -83,7 +86,7 @@
           <span class="userNameDisplay text-warning fw-bold"></span>
           <button class="logoutBtn btn btn-sm btn-outline-danger w-50">Logout</button>
         </div>
-  
+
         <div class="authButtons d-flex flex-column gap-2 w-100">
           <button class="btn-login w-100">Login</button>
           <button class="btn-login registerBtn w-100">Register</button>
